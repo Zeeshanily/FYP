@@ -1,0 +1,33 @@
+######################################
+  run server like this
+######################################
+go to folder virtue_env
+.\Scripts\activate
+go in the folder cd src
+python manage.py runserver
+######################################
+install every module in virtu_env after activating it
+#######################################
+
+ learn Mongodb connection with Django
+http://staltz.com/djangoconfi-mongoengine/#/
+#######################################
+in test_ptoject open setting.py add =>>>>> core,
+go in core folder open file views.py write code
+from django.http import HttpResponse
+# Create your views here.
+def TestView(request, **kwargs):
+	return HttpResponse("Hello world")
+
+to link it go to go to test_project->urls.py and write this code
+import core.views as coreviews
+url(r'^$', coreviews.TestView),
+
+and refresh url in chrome.
+
+adn
+#############################################
+	Video#2
+############################################
+python manage.py startapp core
+in setting file add "core" in installed_App

@@ -1,0 +1,29 @@
+cd desktop
+mkvirtualenv coffeedapp
+pip install django
+pip install django-toolbelt
+django-admin.py startproject coffeedapp
+cd coffeedapp
+python manage.py startapp core
+****************************
+make two folder static and templates at root
+and make a file on the root name Procfile
+Write following
+********************
+web: gunicorn coffeedapp.wsgi --log-file -
+*********************
+in project open "setting.py" 
+(remove this line )#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+add following lines
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))#
+MAIN_DIR = os.path.dirname(os.path.dirname(__file__))#
+scroll down till end and write
+
+TEMPLATES_DIRS = (
+    os.path.join(MAIN_DIR, 'templates'),
+
+    )
+STATICFILES_DIRS = (
+    os.path.join(MAIN_DIR, 'static'),
+
+    )

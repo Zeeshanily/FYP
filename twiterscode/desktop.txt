@@ -1,0 +1,24 @@
+https://ourdata123.com
+
+Application Settings
+Keep the "Consumer Secret" a secret. This key should never be human-readable in your application.
+Consumer Key (API Key)	hRMv9piMGbvVJcxswTlCpFkWF
+Consumer Secret (API Secret)	7abmYepyRepOaLSnIAiGpQfL4fuGU5XV5Ly7F105ah6fknTTT5
+Access Level	Read and write (modify app permissions)
+Owner	zeeshanily
+Owner ID	2536925046
+Application Actions
+
+Your Access Token
+This access token can be used to make API requests on your own account's behalf. Do not share your access token secret with anyone.
+Access Token	2536925046-vFL9U14kAQMhqjZslOOj1P2KIvFibOt5MBwbw1h
+Access Token Secret	zcquEwII3yClJK9N4NCfNlVk4VtfcEKPbOghh5xYklKSU
+Access Level	Read and write
+Owner	zeeshanily
+Owner ID	2536925046
+
+
+ACCESS_TOKEN = "2536925046-vFL9U14kAQMhqjZslOOj1P2KIvFibOt5MBwbw1h"
+ACCESS_SECRET = "zcquEwII3yClJK9N4NCfNlVk4VtfcEKPbOghh5xYklKSU"
+CONSUMER_KEY = "hRMv9piMGbvVJcxswTlCpFkWF"
+CONSUMER_SECRET = "7abmYepyRepOaLSnIAiGpQfL4fuGU5XV5Ly7F105ah6fknTTT5"

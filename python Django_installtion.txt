@@ -1,0 +1,133 @@
+set all peth for python and add environment variable C:\Python27\Lib\site-packages\django\bin;
+then pip install Django
+pip freeze (to chek what is installed)
+######################################
+    installtion
+######################################
+cd desktop
+pip install virtualenv
+virtualenv venv
+go to folder virtue_env
+cd virtue_env
+.\Scripts\activate
+
+deactivate
+.\Scripts\activate
+pip install django (pip install django==1.65)
+python .\Scripts\django-admin.py startproject test_project
+go and look there must be a folder named test_project change it's name to src
+in src folder there must be two 1 is file and other is test_project 
+there must be a file manage.py
+cd src
+cd test_project
+cd ../
+in src folder run manage.py server  // this is how we run a local server
+// root of a folder is where this mange.py is
+python manage.py runserver
+
+copy url and run it in chormede
+######################################
+  run server like this
+######################################
+.\Scripts\activate
+python manage.py runserver
+#######################################
+
+  video# 3
+#######################################
+python .\Scripts\django-admin.py startproject test_project_new
+cd test_project_new
+python manage.py syncdb
+python manage.py runserver
+url/admin/
+
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[13/Dec/2016 00:00:09] "GET / HTTP/1.1" 200 1757
+
+python manage.py syncdb (in venv\src)(venv) C:\Users\Zeeshan Muzammal\Desktop\venv\src>python manage.py syncdb
+
+http://127.0.0.1:8000/admin/      in chorme
+
+komodo ide
+sublime
+pycharm
+
+#######################################
+ video#5
+#######################################
+virtualenv==1.11.6 (X)
+install virtualenvwrapper-win
+
+
+pip install virtualenvwrapper-win
+
+in environment
+variable name: WOKRON
+path          %USERPROFILE%\Envs
+
+mkvirtualenv name
+python .\Scripts\django-admin.py startproject test_project
+go and look there must be a folder named test_project change it's name to src
+in src folder there must be two 1 is file and other is test_project 
+there must be a file manage.py
+in src folder run manage.py server  // this is how we run a local server
+// root of a folder is where this mange.py is
+python manage.py runserver
+
+copy url and run it in chormede
+####################################################
+
+WORKON name
+deactivate
+
+cyberduck
+putty
+
+
+in src file (python manage.py startapp core)
+##########################################################################
+######################################
+  run server like this
+######################################
+.\Scripts\activate
+python manage.py runserver
+#######################################
+in test_ptoject open setting.py add =>>>>> core,
+go in core folder open file views.py write code
+from django.http import HttpResponse
+# Create your views here.
+def TestView(request, **kwargs):
+	return HttpResponse("Hello world")
+
+to link it go to go to test_project->urls.py and write this code
+import core.views as coreviews
+url(r'^$', coreviews.TestView),
+
+and refresh url in chrome.
+
+a#######################################
+
+ learn Mongodb connection with Django
+http://staltz.com/djangoconfi-mongoengine/#/
+#######################################
+
+git init .
+git remote add origin 
+https://github.com/Zeeshanily/coffeed.git
+git pull origin master
+git status
+git add static 
+git config --global core.editor "nano"
+ctrl+O
+enter
+ctrl+x
+git commit -m "Initial version of coffeed"
+git commit -a
+git push origin master
+
+https://vast-refuge-42584.herokuapp.com/ | https://git.heroku.com/vast-refuge-42584.git
+git push heroku master
+
+
+

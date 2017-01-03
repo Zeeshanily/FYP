@@ -1,0 +1,46 @@
+My Computer > Properties > Advanced System Settings > Environment Variables >
+https://www.mongodb.com/download-center?jmp=docs&_ga=1.242242948.781480306.1479210180#community
+set different paths for pythn and pip by copying their URL 
+
+install mongodb and robomongo
+open folder where mongodb is installed earleir
+make 2 folder there. one with name of "data" and "log"
+then open "data" and make foler name "db" in it
+then using cmd navigate to folder "bin" in mongodb created files
+cd ..
+cd ..
+E:
+cd E:\MongoDbdata\bin
+
+mongod --directoryperdb --dbpath E:\MongoDbdata\data\db --logpath E:\MongoDbdata\log\mongo.log --logappend --rest --install
+mongod --directoryperdb --dbpath C:\mongodb\data\db --logpath C:\mongodb\log\mongo.log --logappend --rest --install
+net start MongoDB
+mongo
+cls
+show dbs
+use pnews
+db
+
+
+db.createUser({
+	user:"Ayesha",
+	pwd:"123456",
+	roles: [ "readWrite","dbAdmin" ]
+
+});
+db.createUser({
+	user:"Zeeshan",
+	pwd:"123456",
+	roles: [ "readWrite","dbAdmin" ]
+
+});
+
+db.createCollection('profile');
+show collections
+db.profile.insert({first_name:"john",last_name:"Doe"});
+db.profile.find();
+db.profile.insert([{first_name:"john",last_name:"Doe"},{first_name:"steve",last_name:"smith",gender:"female"} );
+db.profile.find(); 
+db.profile.find().pretty(); 
+db.profile.update({first_name:"john",last_name:"Doe"},({first_name:"john",last_name:"Doe",gender:""male}));
+db.profile.update({first_name:"john"},{$set:{gender: "male"}});

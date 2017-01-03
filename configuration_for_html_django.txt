@@ -1,0 +1,145 @@
+After all installation and after creation of project
+next step is create app to keep every thing in tight boxes
+go to folder where "manage.py" is lying adn run following command
+python manage.py startapp file_name
+upper command will generarte a folder with name ""file_name" and many files lying in it.
+in project open file setting.py [there is a location where we are having "installed_apps" there add name of "app" that's is installed by us ]add =>>>>> 'core', like this
+in the main folder of project....at equal level of "app" ans "src"....there folder "templates" in this folder create a file "index.html"
+explanation of upper line[at the root of your project create a templates" right next to app folder]
+go in app folder open file views.py write code
+**********************************************
+from django.views.generic import TemplateView
+class SplashView(TemplateView):
+	template_name = "index.html" 
+
+**********************************************
+
+
+to link it go to go to test_project->urls.py and write this code
+**********************************************
+import core.views as coreviews
+url(r'^$', coreviews.SplashView.as_view()),
+**********************************************
+in project open "setting.py" 
+(remove this line )#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+add following lines
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))#
+MAIN_DIR = os.path.dirname(os.path.dirname(__file__))#
+scroll down there is a variable name TEMPLATES
+TEMPLATES =
+	'DIRS':[],
+like upper one change it to like a following one
+
+**********************************************
+'DIRS': [os.path.join(MAIN_DIR, 'templates')],
+
+**********************************************
+Lets make our page fancified!
+
+1. Download The Asset Pack
+If you haven't already, download the assets from here. (Check Content Folder)
+
+2. Create New Static Assets Directory
+Use sublime to create a new directory called 'static' in the root of your project (right next to 'templates').
+and copy html file to our index.html that is lying in the templates folder
+3. Paste In Static Assets From Pack
+Copy the 'css' and 'images' folders and paste them into the new 'static' directory.
+
+4. Update Settings with New Static Directory Location
+coffeed/settings.py   scrol down in bottom
+
+STATICFILES_DIRS = (
+ os.path.join(MAIN_DIR, 'static'),
+ )
+
+STATIC_ROOT = 'staticfiles'
+5. Update Index Template to get access to styles that is lying in some other folder
+templates/index.html at the top
+We are using template tag. little commmand run by python. we are telling that its injection for all staic files
+
+{% load staticfiles %}
+Find all asset references like these:
+
+<link rel="stylesheet" href="css/style.css">
+<img src="images/twitter.png" alt="Twitter">
+<img src="images/facebook.png" alt="Facebook">
+and apply the django static template-tag to them like this:
+
+<link rel="stylesheet" href="{% static "css/style.css" %}">
+<img src="{% static "images/twitter.png" %}" alt="Twitter">
+<img src="{% static "images/facebook.png" %}" alt="Facebook">
+#######################################################################
+
+koi app install kro  seeting mn ja kr add kro us ko
+template ky folder mn ja kr html bnao
+is ko dekhany ky leiy views.py mn view bnaoo
+aur ja kr url.py mn us ka (view ka)path do
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#######################################################################
+  here heruko
+
+heruko software need to be install to configure with database
+brew install postgress
+
+pip install django-toolbelt     [it will let us to hockup to heruko]
+
+create a file having name "Procfile" and write following line
+web: gunicorn coffeedapp.wsgi --log-file -
+
+open settings.py
+go uder databases thing add following code
+******************************************************************
+#parse database configuration from $database_url
+import dj_database_url
+DATABASES['default'] = dj_database_url.config()
+#honor the "forwareded proto" header for request.is_secure()
+SECURE_PROXY_SSL_HEADER  = ('HTTP_X_FORWARDED_PROTO', 'https')
+#allow all host header
+ALLOWED_HOSTS = ['*']
+*******************************************************************
+open wsgi.py and replace with this code
+
+*******************************************************************
+
+import os
+
+from django.core.wsgi import get_wsgi_application
+from dj_static import Cling
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "test_project.settings")
+
+
+application = Cling(get_wsgi_application())
+
+
+*******************************************************************
+now move to cmd
+ after activating our environment immeditley
+
+pip freeze > requirements.txt
+
+git status
+
+git add Procfile
+git add requirements.txt
+git commit -a
+add message and folloow command to save and exit
+heroku create
+git push heroku master
+heroku ps:scale web=1
+heroku open
+
+
