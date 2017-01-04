@@ -61,6 +61,7 @@ class Tweets():
                         count =count+1
                         print count
                         spe_id = tw.id_str
+                        return tweets
                         
                     if(tw.created_at< endDate):
                         print "due to date you are terminating"

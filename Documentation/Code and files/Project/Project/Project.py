@@ -31,6 +31,7 @@ save_Tweet = saveTweet.saveTweet()
 
 def tweet_collections_by_handler(array, api, tag):
     for i in range(0,len(array)):
+        print array[i]
         user_timeline = tweet.gathering_tweets(array[i], api)
         if(user_timeline != None):
             save_Tweet.save_tweet(user_timeline, Connection, tag)

@@ -41,8 +41,8 @@ def tweet_collections_by_handler(array, api, tag):
 
 x=True
 while(x==True):
-    #tweet_collections_by_handler(sports, api, "Sports")
-    #tweet_collections_by_handler(anchor, api, "Anchors")
+    tweet_collections_by_handler(sports, api, "Sports")
+    tweet_collections_by_handler(anchor, api, "Anchors")
     tweet_collections_by_handler(News_channel, api, "News_channel")
     tweet_collections_by_handler(entertainment, api, "Entertainment")
     tweet_collections_by_handler(tech, api, "Technology")
